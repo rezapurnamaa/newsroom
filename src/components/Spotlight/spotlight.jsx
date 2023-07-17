@@ -6,7 +6,7 @@ function Spotlight(props) {
     <StyledContainer>
       <div className="spotlight-section">
         <div className="title">NEWS</div>
-        <p className="description">Lorem ipsum dolor sitamet</p>
+        <p className="description">What an important news.</p>
         <div className="dividers-container">
           <div className="divider"></div>
           <div className="icon-container">
