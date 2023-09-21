@@ -1,5 +1,10 @@
-import React from 'react';
+import React from "react";
+import Spotlight from "../spotlight";
+import { render, screen } from "@testing-library/react";
 
-import {Spotlight} from '../Spotlight';
-
-describe('<Spotlight />', () => {});
+describe("<Spotlight />", () => {
+  it("render correctly", () => {
+    render(<Spotlight />);
+    screen.getByText("hello");
+  });
+});

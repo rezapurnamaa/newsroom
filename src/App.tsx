@@ -1,17 +1,18 @@
-import { NavBar } from "./components/NavBar";
+import React from "react";
 import { ThemeProvider } from "styled-components";
-import { FONTS, COLORS } from "./theme";
+import { theme } from "./theme";
+import { NavBar } from "./components/NavBar";
 import { WebsiteLogo } from "./components/WebsiteLogo";
-import Homepage from "./pages/homepage/homepage";
+import { Homepage } from "./pages/homepage";
 
-function App() {
+const App = () => {
   return (
-    <ThemeProvider theme={{ fonts: FONTS, colors: COLORS }}>
+    <ThemeProvider theme={theme}>
       <WebsiteLogo />
       <NavBar />
       <Homepage />
     </ThemeProvider>
   );
-}
+};
 
 export default App;

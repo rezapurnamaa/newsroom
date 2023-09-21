@@ -1,6 +1,12 @@
 import React from "react";
-import { StyledContainer } from "./quickInfoCard.styles.js";
-function QuickInfoCard({ title, description }) {
+import { StyledContainer } from "./quickInfoCard.styles";
+const QuickInfoCard = ({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) => {
   return (
     <StyledContainer>
       <div className="quick-card">
@@ -9,6 +15,6 @@ function QuickInfoCard({ title, description }) {
       </div>
     </StyledContainer>
   );
-}
+};
 
 export default QuickInfoCard;

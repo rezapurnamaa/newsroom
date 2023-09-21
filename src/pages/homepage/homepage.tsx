@@ -6,12 +6,10 @@ import articles from "../../data/articles.json";
 import quick from "../../data/quick.json";
 import { QuickInfoCard } from "../../components/QuickInfoCard";
 
-function Homepage(props) {
-  const articleCards = articles.map(
-    ({ title, description, urlToImage, id }) => (
-      <ArticleCard title={title} description={description} image={urlToImage} />
-    )
-  );
+const Homepage = () => {
+  const articleCards = articles.map(({ title, description, urlToImage }) => (
+    <ArticleCard title={title} description={description} image={urlToImage} />
+  ));
 
   const quickCards = quick.map(({ title, description }) => {
     return (
@@ -34,6 +32,6 @@ function Homepage(props) {
       </div>
     </StyledContainer>
   );
-}
+};
 
 export default Homepage;

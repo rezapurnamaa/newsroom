@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledContainer } from "./spotlight.styles";
-import { ModelDiamond as Icon } from "react-basicons";
-function Spotlight(props) {
+import { IoDiamondSharp as Icon } from "react-icons/io5";
+function Spotlight() {
   return (
     <StyledContainer>
       <div className="spotlight-section">

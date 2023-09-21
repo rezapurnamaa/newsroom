@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "target": "es6",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "lib": ["dom", "es6"],
+    "types": ["styled-components"],
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/index.js", "src/App.js"],
+  "exclude": ["node_modules"]
+}

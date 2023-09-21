@@ -1,12 +1,20 @@
 import React from "react";
 import { StyledContainer } from "./articleCard.styles";
 import {
-  ThumbsUp as Like,
-  CommentChatMessageAlt as Comment,
-  ArrowRight,
-} from "react-basicons";
+  BsFillHandThumbsUpFill as Like,
+  BsFillChatTextFill as Comment,
+  BsArrowRightSquare as ArrowRight,
+} from "react-icons/bs";
 
-function ArticleCard({ title, description, image }) {
+const ArticleCard = ({
+  title,
+  description,
+  image,
+}: {
+  title: string;
+  description: string;
+  image: string;
+}) => {
   return (
     <StyledContainer>
       <div className="article-card">
@@ -31,6 +39,6 @@ function ArticleCard({ title, description, image }) {
       </div>
     </StyledContainer>
   );
-}
+};
 
 export default ArticleCard;

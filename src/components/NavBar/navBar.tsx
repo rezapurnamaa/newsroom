@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledContainer } from "./navBar.styles";
 
-function NavBar(props) {
+const NavBar = () => {
   return (
     <StyledContainer>
       <div className="nav-items">
@@ -23,6 +23,6 @@ function NavBar(props) {
       </div>
     </StyledContainer>
   );
-}
+};
 
 export default NavBar;
