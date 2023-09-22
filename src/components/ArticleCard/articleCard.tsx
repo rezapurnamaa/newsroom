@@ -1,9 +1,8 @@
-import React from "react";
 import { StyledContainer } from "./articleCard.styles";
 import {
-  BsFillHandThumbsUpFill as Like,
-  BsFillChatTextFill as Comment,
-  BsArrowRightSquare as ArrowRight,
+  BsHandThumbsUp as Like,
+  BsChatSquare as Comment,
+  BsArrowRight as ArrowRight,
 } from "react-icons/bs";
 
 const ArticleCard = ({

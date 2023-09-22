@@ -2,8 +2,6 @@ import { styled } from "styled-components";
 
 export const StyledContainer = styled.div`
   .quick-card {
-    /* display: flex; */
-    /* flex-direction: column; */
     font-family: ${(props) => props.theme.fonts.secondary};
     margin-bottom: 20px;
     margin-left: 10px;

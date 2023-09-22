@@ -20,5 +20,10 @@ export const StyledContainer = styled.div`
       flex-wrap: wrap;
       border-right: 1px solid black;
     }
+
+    .quick-info-section {
+      max-width: 22%;
+      margin-left: 15px;
+    }
   }
 `;

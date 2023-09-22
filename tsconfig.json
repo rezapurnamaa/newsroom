@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "target": "es6",
     "module": "esnext",
     "esModuleInterop": true,
@@ -16,6 +16,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/index.js", "src/App.js"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/index.ts", "src/App.js"],
   "exclude": ["node_modules"]
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import { ArticleCard } from "../../components/ArticleCard";
 import { StyledContainer } from "./homepage.styles";
 import { Spotlight } from "../../components/Spotlight";
@@ -8,7 +7,12 @@ import { QuickInfoCard } from "../../components/QuickInfoCard";
 
 const Homepage = () => {
   const articleCards = articles.map(({ title, description, urlToImage }) => (
-    <ArticleCard title={title} description={description} image={urlToImage} />
+    <ArticleCard
+      title={title}
+      description={description}
+      image={urlToImage}
+      key={Math.random()}
+    />
   ));
 
   const quickCards = quick.map(({ title, description }) => {
