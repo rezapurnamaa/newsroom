@@ -6,23 +6,19 @@ import quick from "../../data/quick.json";
 import { QuickInfoCard } from "../../components/QuickInfoCard";
 
 const Homepage = () => {
-  const articleCards = articles.map(({ title, description, urlToImage }) => (
-    <ArticleCard
-      title={title}
-      description={description}
-      image={urlToImage}
-      key={Math.random()}
-    />
-  ));
-
-  const quickCards = quick.map(({ title, description }) => {
-    return (
-      <QuickInfoCard
-        key={Math.random()}
+  const articleCards = articles.map(
+    ({ title, description, urlToImage, id }) => (
+      <ArticleCard
         title={title}
         description={description}
+        image={urlToImage}
+        key={id}
       />
-    );
+    )
+  );
+
+  const quickCards = quick.map(({ title, description, id }) => {
+    return <QuickInfoCard key={id} title={title} description={description} />;
   });
 
   return (

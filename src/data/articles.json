@@ -4,6 +4,7 @@
       "id": "the-wall-street-journal",
       "name": "The Wall Street Journal"
     },
+    "id": 1,
     "author": "wsj",
     "title": "PGA Tour Accuses LIV Golf Saudi Benefactors of Claiming Immunity from Courts...",
     "description": "A newly public court filing alleges that Saudi Arabia’s Public Investment Fund and a lead executive have refused to produce documents or sit for depositions by claiming U.S. courts don’t have jurisdiction over them.",
@@ -17,6 +18,7 @@
       "id": "the-wall-street-journal",
       "name": "The Wall Street Journal"
     },
+    "id": 2,
     "author": "wsj",
     "title": "'The Big One Is Coming' and U.S. Military Isn't Ready...Ukraine 'just the warmup'...",
     "description": "A U.S. flag officer talks candidly about the fading U.S. deterrent.",
@@ -30,6 +32,7 @@
       "id": "wired",
       "name": "Wired"
     },
+    "id": 3,
     "author": "Medea Giordano",
     "title": "21 Early Black Friday Deals: Electric Scooters, Binoculars, and Camera Bags",
     "description": "Black Friday has taken over the month of November. You can stock up on gifts for your family now (or gadgets for yourself).",
@@ -43,6 +46,7 @@
       "id": null,
       "name": "Gizmodo.com"
     },
+    "id": 4,
     "author": "Kyle Barr",
     "title": "What We Know About the Financiers Who Helped Create This Twitter Mess",
     "description": "While Elon Musk’s massive $44 billion buyout of Twitter might seem like a one-man show, it’s really a kind of Suicide Squad of big tech moguls and financiers coming together in a strange rogue’s gallery reunion. Not only were Musk’s personal rich friends in t…",
