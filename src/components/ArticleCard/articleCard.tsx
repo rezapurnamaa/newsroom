@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { StyledContainer } from "./articleCard.styles";
 import {
   BsHandThumbsUp as Like,
@@ -9,10 +10,12 @@ const ArticleCard = ({
   title,
   description,
   image,
+  id,
 }: {
   title: string;
   description: string;
   image: string;
+  id: number;
 }) => {
   return (
     <StyledContainer>
@@ -31,7 +34,9 @@ const ArticleCard = ({
             <span>165</span>
           </div>
           <div className="read-more-icon vertical-center">
-            <span>more...</span>
+            <span>
+              <Link to={`/articles/${id}`}>more...</Link>
+            </span>
             <ArrowRight size={16} />
           </div>
         </div>
