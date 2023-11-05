@@ -5,12 +5,20 @@ export const StyledContainer = styled.div`
 
   .article-card {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     max-width: 400px;
+    height: 600px;
     align-items: center;
-    img {
-      max-width: 400px;
-    }
+    align-content: space-evenly;
+    justify-content: space-between;
+  }
+
+  .drop-shadow {
+    box-shadow: 0px 0px 10px 2px #f2f2f2;
+  }
+
+  .article-card:hover {
+    transform: scale(1.02);
   }
 
   .title {

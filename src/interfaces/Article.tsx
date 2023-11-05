@@ -1,7 +1,7 @@
 import { Source } from "./Source";
 
 export interface Article {
-  id: number;
+  id?: number;
   title: string;
   description: string;
   url: string;
