@@ -1,4 +1,7 @@
-import { StyledContainer } from "./quickInfoCard.styles";
+import {
+  QuickCardTitle,
+  StyledQuickCardContainer,
+} from "./quickInfoCard.styles";
 
 const truncatedDescription = (description: string, maxLength: number) =>
   description.length > maxLength
@@ -9,12 +12,14 @@ const QuickInfoCard = (props: { title: string; description: string }) => {
   const limitedText = truncatedDescription(props.description, 100);
 
   return (
-    <StyledContainer>
+    <StyledQuickCardContainer>
       <div className="quick-card">
-        <div className="title">{props.title}</div>
+        <QuickCardTitle>
+          <div className="title">{props.title}</div>
+        </QuickCardTitle>
         <div className="description">{limitedText}</div>
       </div>
-    </StyledContainer>
+    </StyledQuickCardContainer>
   );
 };
 

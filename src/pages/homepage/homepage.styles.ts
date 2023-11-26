@@ -26,4 +26,28 @@ export const StyledContainer = styled.div`
       margin-left: 15px;
     }
   }
+
+  @media (max-width: 768px) {
+    .content {
+      width: 100%;
+    }
+
+    .news-container {
+      flex-flow: column wrap;
+
+      .articles-section {
+        display: block;
+        border-right: 0px;
+        max-width: 100%;
+        order: 1;
+        width: auto;
+      }
+
+      .quick-info-section {
+        order: 2;
+        max-width: 100%;
+        margin-left: 0px;
+      }
+    }
+  }
 `;

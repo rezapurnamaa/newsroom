@@ -1,8 +1,9 @@
-import { StyledContainer } from "./article.styles";
+import { ArticlePageContainer } from "./article.styles";
 import { Article } from "../../interfaces/Article";
 import { useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { getArticle } from "../../api/articleApi";
+import { Image } from "../../components/imageCard";
 
 const ArticlePage = () => {
   // Get the articleId from the URL parameter
@@ -24,6 +25,7 @@ const ArticlePage = () => {
     } catch (error) {
       const err = error as Error;
       console.error("error: ", err.message);
+      return <div>Something went wrong.</div>;
     }
   }, [articleId]);
 
@@ -33,21 +35,33 @@ const ArticlePage = () => {
     fetchArticle();
   }, [fetchArticle]);
 
+  const formatDate = (originalDate: string) => {
+    const date = new Date(originalDate);
+    return date.toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  };
+
   if (article && articleId !== undefined) {
     const { title, publishedAt, content, urlToImage } = article;
+    const formattedDate = formatDate(publishedAt);
     return (
-      <StyledContainer>
+      <ArticlePageContainer>
         <div className="article-container">
           <div className="title">
             <h1>{title}</h1>
           </div>
-          <p className="published">published at: {publishedAt}</p>
-          <img src={urlToImage} alt="" />
+          <p className="published">published at: {formattedDate}</p>
+          <Image backgroundImageUrl={urlToImage} imageType="hero" />
           <div className="content">
             <p dangerouslySetInnerHTML={{ __html: content }}></p>
           </div>
         </div>
-      </StyledContainer>
+      </ArticlePageContainer>
     );
   }
 

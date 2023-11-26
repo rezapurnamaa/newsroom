@@ -28,4 +28,13 @@ export const StyledContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    //TODO: make sticky navbar
+    position: sticky;
+    top: 0;
+
+    .nav-items {
+    }
+  }
 `;

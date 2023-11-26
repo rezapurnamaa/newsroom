@@ -1,3 +1,3 @@
-import ImageCard from "./imageCard";
+import Image from "./image";
 
-export { ImageCard };
+export { Image };

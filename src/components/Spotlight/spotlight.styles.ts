@@ -37,4 +37,24 @@ export const StyledContainer = styled.div`
     align-items: center;
     margin: 0px 3px;
   }
+
+  @media (max-width: 768px) {
+    .spotlight-section {
+      /* order: 1; */
+      padding-top: 10px;
+    }
+
+    .title {
+      font-size: 100px;
+    }
+
+    .description {
+      font-size: 20px;
+      text-align: justify;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Add specific styles for tablets (e.g., larger font size, different colors, etc.) */
+  }
 `;

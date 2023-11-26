@@ -5,7 +5,7 @@ import {
   BsChatSquare as Comment,
   BsArrowRight as ArrowRight,
 } from "react-icons/bs";
-import ImageCard from "../imageCard/imageCard";
+import Image from "../imageCard/image";
 
 type articleCardType = {
   title: string;
@@ -18,7 +18,7 @@ const ArticleCard = ({ title, description, image, id }: articleCardType) => {
   return (
     <StyledContainer>
       <div className="article-card ">
-        <ImageCard backgroundImageUrl={image} />
+        <Image backgroundImageUrl={image} imageType="card" />
         <div className="title">{title}</div>
         <div className="divider" />
         <div className="description">{description}</div>
