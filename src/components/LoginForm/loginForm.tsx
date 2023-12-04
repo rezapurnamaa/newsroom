@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyledLoginFormContainer } from "./loginForm.styled";
 import validator from "validator";
 import { BACKEND_URL } from "../../api/backendUrl";
@@ -14,6 +14,12 @@ const LoginForm = ({ onLogin }: OnLoginProps) => {
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn, navigate]);
 
   const validateEmail = (email: string) => {
     return validator.isEmail(email);
@@ -76,23 +82,20 @@ const LoginForm = ({ onLogin }: OnLoginProps) => {
       getErrorMessage();
       return;
     }
-    setIsLoggedIn(true);
+
     const { firstname, token } = data;
     const user = {
       firstname,
       token,
     };
-    console.log("firstname in handleSubmitForm: ", firstname);
+    setIsLoggedIn(true);
+    // console.log("firstname in handleSubmitForm: ", firstname);
+    // console.log("user is logged in: ", isLoggedIn);
 
     //TODO use it later
     sessionStorage.setItem("token", token);
 
     onLogin(user);
-    if (isLoggedIn) {
-      navigate("/");
-    }
-    // console.log("LoginForm: ", firstname);
-    // alert(JSON.stringify(`Welcome ${firstname}!`, null, 2));
   };
 
   const getErrorMessage = () => {
