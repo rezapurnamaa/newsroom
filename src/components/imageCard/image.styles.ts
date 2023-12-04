@@ -26,7 +26,7 @@ export const StyledBackgroundImageContainer = styled.div<BackgroundDivProps>`
     .image-card,
     .image-hero {
       height: 250px;
-      width: 380px;
+      width: 360px;
     }
   }
 `;

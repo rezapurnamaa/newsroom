@@ -71,7 +71,7 @@ export const StyledContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin: 0px 5px 0px 5px;
+    /* margin: 0px 5px 0px 5px; */
     margin-bottom: 30px;
     border-radius: 15px;
 
