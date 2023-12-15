@@ -1,13 +1,16 @@
 import { StyledBackgroundImageContainer } from "./image.styles";
 
 interface ImageProps {
-  backgroundImageUrl: string;
+  backgroundimageurl: string;
   imageType: string;
 }
 
-function Image({ backgroundImageUrl, imageType }: ImageProps) {
+function Image({
+  backgroundimageurl: backgroundImageUrl,
+  imageType,
+}: ImageProps) {
   return (
-    <StyledBackgroundImageContainer backgroundImageUrl={backgroundImageUrl}>
+    <StyledBackgroundImageContainer backgroundimageurl={backgroundImageUrl}>
       {imageType === "hero" ? (
         <div className="image-hero"></div>
       ) : (

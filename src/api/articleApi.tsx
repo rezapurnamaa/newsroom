@@ -1,8 +1,12 @@
 import { BACKEND_URL } from "./backendUrl";
 
-export const getAllArticles = async (param: string) => {
+export const getAllArticles = async (param: string, token: string) => {
   try {
-    const response = await fetch(`${BACKEND_URL}/${param}`);
+    const response = await fetch(`${BACKEND_URL}/${param}`, {
+      headers: {
+        Authorization: token!,
+      },
+    });
     const data = await response.json();
     return data;
   } catch (error) {
@@ -10,9 +14,16 @@ export const getAllArticles = async (param: string) => {
   }
 };
 
-export const getArticle = async (articleId: number | undefined) => {
+export const getArticle = async (
+  articleId: number | undefined,
+  token: string
+) => {
   try {
-    const response = await fetch(`${BACKEND_URL}/articles/${articleId}`);
+    const response = await fetch(`${BACKEND_URL}/articles/${articleId}`, {
+      headers: {
+        Authorization: token!,
+      },
+    });
     const data = await response.json();
     console.log("get article by id:", articleId);
     return data;

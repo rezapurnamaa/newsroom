@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 import App from "./App";
+import { AuthProvider } from "./auth/AuthContext";
 
 // Get the root element by its ID
 const rootElement = document.getElementById("root");
@@ -12,7 +13,9 @@ if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </StrictMode>
   );
 } else {

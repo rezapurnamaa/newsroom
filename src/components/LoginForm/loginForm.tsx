@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { StyledLoginFormContainer } from "./loginForm.styled";
 import validator from "validator";
 import { BACKEND_URL } from "../../api/backendUrl";
 import { OnLoginProps } from "../../interfaces/onLoginProps";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../auth/AuthContext";
 
 const LoginForm = ({ onLogin }: OnLoginProps) => {
   const [form, setForm] = useState({
@@ -12,14 +13,14 @@ const LoginForm = ({ onLogin }: OnLoginProps) => {
   });
 
   const [showErrorMessage, setShowErrorMessage] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isAuthenticated, setAuthenticated, setToken } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoggedIn) {
+    if (isAuthenticated) {
       navigate("/");
     }
-  }, [isLoggedIn, navigate]);
+  }, [isAuthenticated, navigate]);
 
   const validateEmail = (email: string) => {
     return validator.isEmail(email);
@@ -88,12 +89,11 @@ const LoginForm = ({ onLogin }: OnLoginProps) => {
       firstname,
       token,
     };
-    setIsLoggedIn(true);
+    setAuthenticated(true);
     // console.log("firstname in handleSubmitForm: ", firstname);
     // console.log("user is logged in: ", isLoggedIn);
-
-    //TODO use it later
     sessionStorage.setItem("token", token);
+    setToken(user.token);
 
     onLogin(user);
   };

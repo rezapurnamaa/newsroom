@@ -4,8 +4,11 @@ import { useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { getArticle } from "../../api/articleApi";
 import { Image } from "../../components/imageCard";
+import { useAuth } from "../../auth/AuthContext";
 
 const ArticlePage = () => {
+  //Get token from context
+  const { token } = useAuth();
   // Get the articleId from the URL parameter
   const { id } = useParams();
 
@@ -17,7 +20,7 @@ const ArticlePage = () => {
   // Fetch the article when the component mounts
   const fetchArticle = useCallback(async () => {
     try {
-      const data = await getArticle(articleId);
+      const data = await getArticle(articleId, token);
       if (Array.isArray(data) && data.length > 0) {
         const fetchedArticle: Article = data[0];
         setArticle(fetchedArticle); // Set article to the first element in the array
@@ -27,7 +30,7 @@ const ArticlePage = () => {
       console.error("error: ", err.message);
       return <div>Something went wrong.</div>;
     }
-  }, [articleId]);
+  }, [articleId, token]);
 
   const [article, setArticle] = useState<Article>();
 
@@ -49,6 +52,7 @@ const ArticlePage = () => {
   if (article && articleId !== undefined) {
     const { title, publishedAt, content, urlToImage } = article;
     const formattedDate = formatDate(publishedAt);
+
     return (
       <ArticlePageContainer>
         <div className="article-container">
@@ -56,7 +60,7 @@ const ArticlePage = () => {
             <h1>{title}</h1>
           </div>
           <p className="published">published at: {formattedDate}</p>
-          <Image backgroundImageUrl={urlToImage} imageType="hero" />
+          <Image backgroundimageurl={urlToImage} imageType="hero" />
           <div className="content">
             <p dangerouslySetInnerHTML={{ __html: content }}></p>
           </div>

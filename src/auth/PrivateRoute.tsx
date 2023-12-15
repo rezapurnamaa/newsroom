@@ -1,9 +1,15 @@
-import React from "react";
-import { Route, Navigate } from "react-router-dom";
+// PrivateRoute.tsx
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
-const PrivateRoute = (props: any) => {
-  const token = localStorage.getItem("auth");
-  return <>{token ? <Route {...props} /> : <Navigate to="/login" />}</>;
+const PrivateRoute = () => {
+  const auth = useAuth();
+
+  return auth.isAuthenticated ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/login" replace={true} />
+  );
 };
 
 export default PrivateRoute;

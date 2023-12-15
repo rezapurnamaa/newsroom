@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
 
 interface BackgroundDivProps {
-  backgroundImageUrl?: string;
+  backgroundimageurl?: string;
 }
 
 export const StyledBackgroundImageContainer = styled.div<BackgroundDivProps>`
   display: flex;
   background-color: aqua;
-  background-image: url(${(props) => props.backgroundImageUrl});
+  background-image: url(${(props) => props.backgroundimageurl});
   background-size: cover;
   background-position: center center;
   border-radius: 5px;
