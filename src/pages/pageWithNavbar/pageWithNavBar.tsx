@@ -1,10 +1,10 @@
 import { NavBar } from "../../components/NavBar";
 import { Outlet } from "react-router";
 
-export const PageWithNavBar = () => {
+export const PageWithNavBar = (props: { username: string }) => {
   return (
     <>
-      <NavBar />
+      <NavBar username={props.username} />
       <Outlet />
     </>
   );

@@ -44,6 +44,10 @@ export const StyledLoginFormContainer = styled.div`
     margin-top: 15px;
   }
 
+  .link {
+    padding-bottom: 20px;
+  }
+
   input {
     margin: 0 40px;
     padding: 12px 25px;
@@ -65,7 +69,7 @@ export const StyledLoginFormContainer = styled.div`
   }
 
   .submit-button {
-    margin: 40px 40px 40px 40px;
+    margin: 40px 40px 10px 40px;
     padding: 15px 20px;
     color: white;
     background-color: crimson;

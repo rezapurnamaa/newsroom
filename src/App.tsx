@@ -14,6 +14,7 @@ import { UserProps } from "./interfaces/User";
 import PrivateRoute from "./auth/PrivateRoute";
 import { NotFoundPage } from "./pages/notFoundPage";
 import { useAuth } from "./auth/AuthContext";
+import { LogoutPage } from "./pages/logoutPage";
 
 const App = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -35,7 +36,6 @@ const App = () => {
   // console.log("articles: ", articles);
 
   const handleLogin = (data: UserProps) => {
-    // console.log("handleLogin in App.tsx: ", data);
     setUsername((prevState) => ({
       ...prevState,
       ...data,
@@ -53,9 +53,10 @@ const App = () => {
               path="/login"
               element={<LoginPage onLogin={handleLogin} />}
             />
+            <Route path="/logout" element={<LogoutPage />} />
           </Route>
           <Route path="/" element={<PrivateRoute />}>
-            <Route element={<PageWithNavBar />}>
+            <Route element={<PageWithNavBar username={username?.firstname!} />}>
               <Route
                 path="/"
                 element={<Homepage articles={articles} quicks={quicks} />}

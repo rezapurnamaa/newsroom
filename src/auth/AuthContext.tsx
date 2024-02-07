@@ -8,6 +8,7 @@ import React, {
 } from "react";
 
 interface AuthContextProps {
+  logOut: () => void;
   isAuthenticated: boolean;
   setAuthenticated: (value: boolean) => void;
   token: string;
@@ -20,13 +21,18 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [isAuthenticated, setAuthenticated] = useState(false);
   const [token, setToken] = useState<string>("");
   const getToken = sessionStorage.getItem("token");
-  // const token = sessionStorage.getItem("token");
 
   const contextValue: AuthContextProps = {
     isAuthenticated,
     setAuthenticated,
     token,
     setToken,
+    logOut: () => {
+      const emptyToken = "";
+      sessionStorage.setItem("token", emptyToken);
+      setToken(emptyToken);
+      setAuthenticated(false);
+    },
   };
 
   useEffect(() => {

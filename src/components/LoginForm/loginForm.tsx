@@ -5,6 +5,7 @@ import { BACKEND_URL } from "../../api/backendUrl";
 import { OnLoginProps } from "../../interfaces/onLoginProps";
 import { useNavigate } from "react-router";
 import { useAuth } from "../../auth/AuthContext";
+import { Link } from "react-router-dom";
 
 const LoginForm = ({ onLogin }: OnLoginProps) => {
   const [form, setForm] = useState({
@@ -136,6 +137,9 @@ const LoginForm = ({ onLogin }: OnLoginProps) => {
         <button className="submit-button" type="submit">
           Login
         </button>
+        <Link to={"/register"} className="link">
+          Register
+        </Link>
         {getErrorMessage()}
       </form>
     </StyledLoginFormContainer>
